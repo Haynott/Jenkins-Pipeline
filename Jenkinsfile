@@ -26,8 +26,7 @@ pipeline {
                                 subject: "Jenkins Job - Unit and Integration Tests SUCCESS",
                                 body: "The Unit and Integration Tests stage completed successfully. Please find the attached logs.",
                                 to: "soohx0007@gmail.com",  
-                                attachLog: true,
-                                timeout: 100
+                                attachLog: true
                             )
                         }
                     }
@@ -39,8 +38,7 @@ pipeline {
                                 subject: "Jenkins Job - Unit and Integration Tests FAILURE",
                                 body: "The Unit and Integration Tests stage failed. Please find the attached logs.",
                                 to: "soohx0007@gmail.com",  
-                                attachLog: true,
-                                timeout: 100
+                                attachLog: true
                             )
                         }
                     }
@@ -72,8 +70,7 @@ pipeline {
                                 subject: "Jenkins Job - Security Scan SUCCESS",
                                 body: "The Security Scan stage completed successfully. Please find the attached logs.",
                                 to: "soohx0007@gmail.com",  
-                                attachLog: true,
-                                timeout: 100
+                                attachLog: true
                             )
                         }
                     }
@@ -85,8 +82,7 @@ pipeline {
                                 subject: "Jenkins Job - Security Scan FAILURE",
                                 body: "The Security Scan stage failed. Please find the attached logs.",
                                 to: "soohx0007@gmail.com",  
-                                attachLog: true,
-                                timeout: 100
+                                attachLog: true
                             )
                         }
                     }
