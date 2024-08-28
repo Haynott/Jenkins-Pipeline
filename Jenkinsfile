@@ -26,6 +26,7 @@ pipeline {
                             body: "The Unit and Integration Tests stage completed successfully. Please find the attached logs.",
                             to: "soohx0007@gmail.com",  
                             attachLog: true
+                            timeout: 100
                         )
                     }
                 }
@@ -36,6 +37,7 @@ pipeline {
                             body: "The Unit and Integration Tests stage failed. Please find the attached logs.",
                             to: "soohx0007@gmail.com",  
                             attachLog: true
+                            timeout: 100
                         )
                     }
                 }
@@ -66,6 +68,7 @@ pipeline {
                             body: "The Security Scan stage completed successfully. Please find the attached logs.",
                             to: "soohx0007@gmail.com",  
                             attachLog: true
+                            timeout: 100
                         )
                     }
                 }
@@ -76,6 +79,7 @@ pipeline {
                             body: "The Security Scan stage failed. Please find the attached logs.",
                             to: "soohx0007@gmail.com",  
                             attachLog: true
+                            timeout: 100
                         )
                     }
                 }
