@@ -20,7 +20,7 @@ pipeline {
             }
             post {
                 success {
-                    timeout(time: 30, unit: 'SECONDS') {
+                    timeout(time: 150, unit: 'SECONDS') {
                         script {
                             emailext(
                                 subject: "Jenkins Job - Unit and Integration Tests SUCCESS",
@@ -32,7 +32,7 @@ pipeline {
                     }
                 }
                 failure {
-                    timeout(time: 30, unit: 'SECONDS') {
+                    timeout(time: 150, unit: 'SECONDS') {
                         script {
                             emailext(
                                 subject: "Jenkins Job - Unit and Integration Tests FAILURE",
@@ -64,7 +64,7 @@ pipeline {
             }
             post {
                 success {
-                    timeout(time: 30, unit: 'SECONDS') {
+                    timeout(time: 150, unit: 'SECONDS') {
                         script {
                             emailext(
                                 subject: "Jenkins Job - Security Scan SUCCESS",
@@ -76,7 +76,7 @@ pipeline {
                     }
                 }
                 failure {
-                    timeout(time: 30, unit: 'SECONDS') {
+                    timeout(time: 150, unit: 'SECONDS') {
                         script {
                             emailext(
                                 subject: "Jenkins Job - Security Scan FAILURE",
