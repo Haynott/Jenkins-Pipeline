@@ -124,4 +124,18 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            emailext(
+                subject: "Jenkins Job - ${currentBuild.fullDisplayName} - ${currentBuild.currentResult}",
+                body: """
+                    <p>The Jenkins job <strong>${currentBuild.fullDisplayName}</strong> has finished with the status: <strong>${currentBuild.currentResult}</strong>.</p>
+                    <p>You can view the build details here: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
+                """,
+                to: "soohx0007@gmail.com",
+                mimeType: 'text/html'
+            )
+        }
+    }
 }
