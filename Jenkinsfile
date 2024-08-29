@@ -20,27 +20,31 @@ pipeline {
             }
             post {
                 success {
-                    timeout(time: 150, unit: 'SECONDS') {
-                        script {
-                            emailext(
-                                subject: "Jenkins Job - Unit and Integration Tests SUCCESS",
-                                body: "The Unit and Integration Tests stage completed successfully. Please find the attached logs.",
-                                to: "soohx0007@gmail.com",  
-                                attachLog: true
-                            )
-                        }
+                    script {
+                        emailext(
+                            subject: "Jenkins Job - Unit and Integration Tests SUCCESS",
+                            body: """
+                                <p>The <strong>Unit and Integration Tests</strong> stage completed successfully.</p>
+                                <p>Please find the attached logs for more details.</p>
+                            """,
+                            to: "soohx0007@gmail.com",  
+                            attachLog: true,
+                            mimeType: 'text/html'
+                        )
                     }
                 }
                 failure {
-                    timeout(time: 150, unit: 'SECONDS') {
-                        script {
-                            emailext(
-                                subject: "Jenkins Job - Unit and Integration Tests FAILURE",
-                                body: "The Unit and Integration Tests stage failed. Please find the attached logs.",
-                                to: "soohx0007@gmail.com",  
-                                attachLog: true
-                            )
-                        }
+                    script {
+                        emailext(
+                            subject: "Jenkins Job - Unit and Integration Tests FAILURE",
+                            body: """
+                                <p>The <strong>Unit and Integration Tests</strong> stage failed.</p>
+                                <p>Please find the attached logs for more details.</p>
+                            """,
+                            to: "soohx0007@gmail.com",  
+                            attachLog: true,
+                            mimeType: 'text/html'
+                        )
                     }
                 }
             }
@@ -64,27 +68,31 @@ pipeline {
             }
             post {
                 success {
-                    timeout(time: 150, unit: 'SECONDS') {
-                        script {
-                            emailext(
-                                subject: "Jenkins Job - Security Scan SUCCESS",
-                                body: "The Security Scan stage completed successfully. Please find the attached logs.",
-                                to: "soohx0007@gmail.com",  
-                                attachLog: true
-                            )
-                        }
+                    script {
+                        emailext(
+                            subject: "Jenkins Job - Security Scan SUCCESS",
+                            body: """
+                                <p>The <strong>Security Scan</strong> stage completed successfully.</p>
+                                <p>Please find the attached logs for more details.</p>
+                            """,
+                            to: "soohx0007@gmail.com",  
+                            attachLog: true,
+                            mimeType: 'text/html'
+                        )
                     }
                 }
                 failure {
-                    timeout(time: 150, unit: 'SECONDS') {
-                        script {
-                            emailext(
-                                subject: "Jenkins Job - Security Scan FAILURE",
-                                body: "The Security Scan stage failed. Please find the attached logs.",
-                                to: "soohx0007@gmail.com",  
-                                attachLog: true
-                            )
-                        }
+                    script {
+                        emailext(
+                            subject: "Jenkins Job - Security Scan FAILURE",
+                            body: """
+                                <p>The <strong>Security Scan</strong> stage failed.</p>
+                                <p>Please find the attached logs for more details.</p>
+                            """,
+                            to: "soohx0007@gmail.com",  
+                            attachLog: true,
+                            mimeType: 'text/html'
+                        )
                     }
                 }
             }
